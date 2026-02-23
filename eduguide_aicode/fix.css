@@ -1,0 +1,386 @@
+      /* --- Reset --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        overflow-x: hidden; /* Mencegah scroll ke samping */
+      }
+
+      /* --- HEADER CONTAINER UTAMA --- */
+      /* Ini menampung background dan semua isi */
+      header {
+        position: relative;
+        width: 100%;
+        min-height: 100vh; /* Full layar */
+        background: url("IMG_9152.PNG") no-repeat center right;
+        background-size: contain; /* Atau 'contain' jika gambar ingin utuh */
+        display: flex;
+        flex-direction: column;
+        padding: 20px 50px;
+      }
+
+      /* --- 1. NAVIGASI (Logo & Login Kecil) --- */
+      nav {
+        padding: 20px 50px;
+        align-items: center;
+        z-index: 10;
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    nav a {
+        font-size: large;
+        font-family:'Poppins',sans-serif;
+        text-decoration: none;
+        color: #000;
+        font-size: 1.5rem;
+        border: 2px solid #333;
+        background: transparent;
+        font-weight: 300;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.3s;
+        padding: 3px 20px;
+    }
+
+    nav a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+      .logo {
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #000;
+      }
+
+      .top-login {
+        text-decoration: none;
+        color: #000;
+        font-weight: 500;
+      }
+
+      /* --- 2. KONTEN UTAMA (Teks Kiri) --- */
+      .hero-content {
+        flex: 1; /* Mengisi ruang kosong agar search terdorong ke bawah */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Posisi vertikal tengah */
+        align-items: flex-start; /* Rata kiri */
+        max-width: 50%; /* Membatasi lebar agar tidak nabrak robot */
+        padding-bottom: 50px; /* Geser teks agak ke atas sedikit */
+      }
+
+      .welcome-text {
+        font-family: "Great Vibes", cursive;
+        font-size: 3.5rem;
+        color: #000;
+        margin-bottom: -10px; /* Merapatkan dengan judul bawahnya */
+        padding-left: 10px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: #000;
+        margin-bottom: 20px;
+      }
+
+      .login-btn {
+        padding: 12px 50px;
+        border: 2px solid #333;
+        background: transparent;
+        color: #333;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .login-btn:hover {
+        background-color: #333;
+        color: #fff;
+      }
+
+      /* --- Features Section --- */
+      .features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px 80px;
+        background-color: #fafafa;
+      }
+      .features h2 {
+        margin-bottom: 40px;
+        font-weight: 600;
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+      }
+      .flow-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .box {
+        width: 200px;
+        height: 120px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+      }
+      .arrow {
+        font-size: 2rem;
+        color: #333;
+      }
+
+      /* --- STYLE BARU: MODAL (POP UP) --- */
+      .modal {
+        display: none; /* Tersembunyi secara default */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Latar belakang gelap transparan */
+        backdrop-filter: blur(2px); /* Efek blur di background */
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        position: relative;
+        text-align: center;
+        animation: slideDown 0.3s ease-out;
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #aaa;
+      }
+      .close-btn:hover {
+        color: #333;
+      }
+
+      /* Form Styles */
+      .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+      }
+      .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+      }
+      .submit-btn:hover {
+        background-color: #555;
+      }
+
+      .toggle-text {
+        margin-top: 15px;
+        font-size: 0.9rem;
+      }
+      .toggle-text span {
+        color: #007bff;
+        cursor: pointer;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+/* --- About Us Section --- */
+      .about-us {
+        padding: 80px 20px;
+        /* Background kertas dengan pola titik halus */
+        background-color: #f9f9f9;
+        background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+        background-size: 20px 20px;
+        color: #333;
+        text-align: center;
+        border-top: 3px solid #333; /* Pemisah tegas dengan header */
+      }
+
+      .about-us h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        color: #000;
+        display: inline-block;
+        position: relative;
+        letter-spacing: 2px;
+      }
+
+      /* Garis bawah dekoratif untuk Judul Utama */
+      .about-us h2::after {
+        content: '';
+        display: block;
+        width: 60%;
+        height: 5px;
+        background: #333;
+        margin: 10px auto 0;
+        border-radius: 10px;
+      }
+
+      .about-us h3 {
+        font-size: 1.8rem;
+        margin-top: 60px;
+        margin-bottom: 25px;
+        color: #000;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .about-us p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #444;
+      }
+
+      /* --- UBAH LIST MENJADI GRID KARTU --- */
+      .about-us ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 30px auto;
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid Responsif */
+        gap: 25px;
+      }
+
+      .about-us li {
+        background: #fff;
+        border: 2px solid #333;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: left;
+        box-shadow: 5px 5px 0px #333; /* Shadow tajam ala retro */
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .about-us li:hover {
+        transform: translateY(-5px); /* Efek naik saat hover */
+        box-shadow: 8px 8px 0px #333;
+      }
+
+      .about-us li strong {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #000;
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 5px;
+      }
+
+      /* --- TIM PENGEMBANG (Card Style) --- */
+      .team {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 40px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .member {
+        background: #fff;
+        border: 2px solid #333;
+        /* Bentuk unik sedikit asimetris */
+        border-radius: 15px 50px 15px 50px; 
+        padding: 30px 20px;
+        width: 220px;
+        box-shadow: 5px 5px 0px #333;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .member:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 8px 8px 0px #000;
+        background-color: #f4f4f4;
+      }
+
+      .member h4 {
+        margin-bottom: 5px;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #000;
+      }
+
+      .member p {
+        font-size: 0.95rem;
+        color: #666;
+        margin: 0;
+        font-style: italic;
+      }
+
+      /* Dekorasi kecil di kartu member */
+      .member::before {
+        content: "●";
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        color: #333;
+        font-size: 10px;
+      }
