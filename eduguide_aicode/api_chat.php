@@ -5,7 +5,7 @@ header('Content-Type: application/json');
 
 // --- KONFIGURASI ---
 // Masukkan API KEY Groq
-$apiKey = "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";
+$apiKey = "PUT-YOUR-GROQ-API-HERE";
 $modelName = "llama-3.3-70b-versatile";
 // -------------------
 
@@ -153,4 +153,5 @@ echo json_encode([
     'session_id' => $session_id, // Penting: Kirim balik ID sesi agar JS bisa update URL
     'timestamp' => date('H:i')
 ]);
+
 ?>
